@@ -447,7 +447,7 @@ resource "ibm_is_lb_listener" "public_lb_listener" {
 module "workload_vpes" {
   source             = "terraform-ibm-modules/vpe-gateway/ibm"
   region             = "us-south"
-  prefix             = "workload-vpe"
+  prefix             = "${var.prefix}-workload-vpe"
   vpc_name           = module.workload_vpc.vpc_name
   vpc_id             = module.workload_vpc.vpc_id
   subnet_zone_list   = module.workload_vpc.subnet_zone_list
