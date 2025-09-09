@@ -6,13 +6,13 @@ AK = os.getenv("COS_ACCESS_KEY_ID")
 SK = os.getenv("COS_SECRET_ACCESS_KEY")
 BUCKET = os.getenv("COS_BUCKET_NAME")
 OBJ = os.getenv("COS_OBJECT_KEY", "index.html")
+ENDPOINT = os.getenv("VPE_ENDPOINT")
 
-if not all([AK, SK, BUCKET, OBJ]):
+if not all([AK, SK, BUCKET, OBJ, ENDPOINT]):
     raise EnvironmentError("Missing required environment variables.")
 
 # COS config
 HOST = "s3.direct.us-south.cloud-object-storage.appdomain.cloud"
-ENDPOINT = "https://10.10.0.5"
 REGION = "us-south"
 
 # Signing helpers
