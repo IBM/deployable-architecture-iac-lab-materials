@@ -5,13 +5,13 @@ variable "ibmcloud_api_key" {
 }
 
 variable "prefix" {
-  description = "Unique prefix for resource naming (e.g., 'jdoe-demo' or 'team-dev')"
+  description = "Unique prefix for resource naming (e.g., 'vb-lab' or 'ra-dev'). Maximum prefix length is 6 characters."
   type        = string
 }
 
 provider "ibm" {
   ibmcloud_api_key = var.ibmcloud_api_key
-  region           = "us-south"
+  region           = "us-south" # You can change this to your preferred region
 }
 
 terraform {
@@ -72,7 +72,7 @@ module "management_vpc" {
         name        = "allow-workload-to-management-traffic"
         action      = "allow"
         direction   = "inbound"
-        source      = "10.10.0.0/20" # workload vpc range
+        source      = "10.10.0.0/20"  # workload vpc range
         destination = "0.0.0.0/0"
       },
       {
@@ -190,6 +190,12 @@ resource "local_file" "ssh_private_key" {
   content         = tls_private_key.ssh_key.private_key_pem
   filename        = "${path.module}/${var.prefix}_ssh_private_key.pem"
   file_permission = "0600" # Read-only for owner
+}
+
+# ONLY outputs private file name
+output "ssh_private_key_file_name" {
+  description = "Private key file name."
+  value = "${var.prefix}_ssh_private_key.pem"
 }
 
 resource "ibm_is_ssh_key" "ssh_key" {
@@ -480,6 +486,16 @@ module "cos_storage" {
     generate_hmac_credentials = true
     role                      = "Reader"
   }]
+}
+
+output "cos_instance_crn" {
+  description = "COS instance CRN"
+  value       = module.cos_storage.cos_instance_crn
+}
+
+output "bucket_name" {
+  description = "Bucket name"
+  value       = module.cos_storage.bucket_name
 }
 
 output "cos_access_key_id" {
