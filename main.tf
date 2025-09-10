@@ -488,6 +488,16 @@ module "cos_storage" {
   }]
 }
 
+output "cos_instance_crn" {
+  description = "COS instance CRN"
+  value       = module.cos_storage.cos_instance_crn
+}
+
+output "bucket_name" {
+  description = "Bucket name"
+  value       = module.cos_storage.bucket_name
+}
+
 output "cos_access_key_id" {
   sensitive   = true
   description = "Access key ID for Cloud Object Storage (S3-compatible)"
