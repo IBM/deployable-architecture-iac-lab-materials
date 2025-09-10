@@ -5,13 +5,13 @@ variable "ibmcloud_api_key" {
 }
 
 variable "prefix" {
-  description = "Unique prefix for resource naming (e.g., 'jdoe-demo' or 'team-dev')"
+  description = "Unique prefix for resource naming (e.g., 'vb-lab' or 'ra-dev'). Maximum prefix length is 6 characters."
   type        = string
 }
 
 provider "ibm" {
   ibmcloud_api_key = var.ibmcloud_api_key
-  region           = "us-south"
+  region           = "us-south" # You can change this to your preferred region
 }
 
 terraform {
@@ -72,7 +72,7 @@ module "management_vpc" {
         name        = "allow-workload-to-management-traffic"
         action      = "allow"
         direction   = "inbound"
-        source      = "10.10.0.0/20" # workload vpc range
+        source      = "10.10.0.0/20"  # workload vpc range
         destination = "0.0.0.0/0"
       },
       {
