@@ -1,7 +1,7 @@
 {
     "products": [
         {
-            "label": "Demo TechXchange Hub and Spoke VPC Topology",
+            "label": "Hub and Spoke VPC Topology",
             "name": "cloud-labs-txc-2025-pfeng-1818",
             "product_kind": "solution",
             "tags": [
@@ -15,7 +15,7 @@
             "features": [],
             "flavors": [
                 {
-                    "label": "standard",
+                    "label": "Standard",
                     "name": "standard",
                     "working_directory": ".",
                     "licenses": [],
@@ -38,7 +38,7 @@
                             "key": "prefix",
                             "type": "string",
                             "default_value": "__NOT_SET__",
-                            "description": "Unique prefix for resource naming (e.g., 'jdoe-demo' or 'team-dev')",
+                            "description": "Unique prefix for resource naming (e.g., 'jdoe' or 'dev')",
                             "required": true,
                             "virtual": false
                         }
