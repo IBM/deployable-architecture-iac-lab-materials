@@ -23,40 +23,17 @@
                 "hub and spoke"
             ],
             "short_description": "Deploy Hub and Spoke Virtual Private Clouds (VPCs) on IBM Cloud with full flexibility and customisation to support different workloads",
-            "long_description": "The Cloud foundation for VPC deployable architecture provides a foundational IBM Cloud [Virtual Private Cloud (VPC)](https://www.ibm.com/cloud/vpc) environment that serves as the base for deploying compute and advanced resources. It establishes the core networking and security framework without including Virtual Server Instances (VSI) or Red Hat OpenShift clusters by default. You can extend this deployable architecture to support a variety of others like [Landing zone for applications with virtual servers](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-vsi-vpc-28e2b12c-858f-4ae8-8717-60db8cec2e6e-global), [Landing zone for containerized applications with Red Hat OpenShift](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-ocp-vpc-1728a4fd-f561-4cf9-82ef-2b1eeb5da1a8-global), [Cloud automation for Red Hat OpenShift AI](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-ocp-ai-ba708aed-bb8a-4ac0-83a7-53a066701db5-global) and many more. You can set up a foundational layer to enable consistent, scalable, and secure deployments across multiple IBM Cloud workloads.",
+            "long_description": "This accelerator provisions a secure, scalable hub-and-spoke network architecture on IBM Cloud. It enables centralized management, private connectivity, and isolated workload environments.",
             "offering_docs_url": "https://ibm-cloud.github.io/techxchange-labs/pfeng-1818/#/",
             "offering_icon_url": "https://globalcatalog.cloud.ibm.com/api/v1/1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc/artifacts/solution.svg",
-            "features": [{
-                "title": "VPC Networking and Subnet Management",
-                "description": "Provisions [subnets](https://cloud.ibm.com/docs/vpc?topic=vpc-about-subnets-vpc) across three availability zones, dividing your VPC into smaller, isolated networks for improved organization, availability, and traffic control. It Includes support for [address prefixes](https://cloud.ibm.com/docs/vpc?topic=vpc-about-subnets-vpc) to define IP ranges, and [routing tables](https://cloud.ibm.com/docs/vpc?topic=vpc-create-vpc-routing-table&interface=ui) with custom routes to manage flow of traffic not only within the VPC but also to the external networks."
+            "features": [
+                {
+                    "title": "Secure Access with Jumpbox & Load Balancer",
+                    "description": "Jumpbox and Load Balancer Chaining for secure, controlled access to private workloads."
                 },
                 {
-                    "title": "Network Security Controls",
-                    "description": "Provides multiple layers of network protection through [Network ACLs](https://cloud.ibm.com/docs/vpc?topic=vpc-using-acls) and [security groups](https://cloud.ibm.com/docs/vpc?topic=vpc-using-security-groups). ACLs define subnet-level rules to allow or deny traffic, while security groups act as virtual firewalls for instances, controlling inbound and outbound connections."
-                },
-                {
-                    "title": "Connectivity and Gateway Services",
-                    "description": "Enables secure and flexible connectivity options with [public gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-about-public-gateways) for internet access, [VPN gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-vpn-overview) for encrypted hybrid cloud connections, and [VPE gateways](https://cloud.ibm.com/docs/vpc?topic=vpc-about-vpe) for private access to IBM Cloud services. Also supports edge networking to isolate and optimize traffic to the public internet, and creates a transit gateway to connect the default VPCs in the deployable architecture."
-                },
-                {
-                    "title": "Flow Logs and Secure Storage",
-                    "description": "Captures and stores network traffic data using [VPC flow logs](https://cloud.ibm.com/docs/vpc?topic=vpc-flow-logs), with logs directed to an Object Storage bucket for analysis and long-term retention. Supports Key Management Service (KMS) encryption for the storage bucket, ensuring enhanced data security and compliance."
-                },
-                {
-                    "title": "Traffic Management",
-                    "description": "Configures routing tables and routes to control the flow of traffic not only within the VPC but also to external networks. [Learn more](https://cloud.ibm.com/docs/vpc?topic=vpc-create-vpc-routing-table&interface=ui)."
-                },
-                {
-                    "title": "Sets up logging for the VPC instance",
-                    "description": "Optionally, you can deploy [Cloud automation for Cloud Logs]((https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-cloud-logs-63d8ae58-fbf3-41ce-b844-0fb5b85882ab-global)) to route, alert, and visualize platform logs that are generated by your VPC instance."
-                },
-                {
-                    "title": "Sets up monitoring operational metrics for the VPC instance",
-                    "description": "Optionally, you can deploy [Cloud automation for Cloud Monitoring](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-cloud-monitoring-73debdbf-894f-4c14-81c7-5ece3a70b67d-global) to measure how users and applications interact with your VPC instance."
-                },
-                {
-                    "title": "Sets up activity tracking for the VPC instance",
-                    "description": "Optionally, you can deploy [Cloud automation for Activity Tracker Event Routing](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-activity-tracker-918453c3-4f97-4583-8c4a-83ef12fc7916-global) to route and securely store auditing events that are related to your VPC instance."
+                    "title": "Automated HA Deployment on IBM Cloud",
+                    "description": "Automated multi-zone deployment using IBM Cloud Terraform modules for high availability."
                 }
             ],
             "flavors": [
