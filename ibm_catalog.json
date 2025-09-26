@@ -1,7 +1,7 @@
 {
     "products": [
         {
-            "label": "Hub and Spoke VPC Topology",
+            "label": "Secure Hub-and-Spoke Foundation",
             "name": "cloud-labs-txc-2025-pfeng-1818",
             "product_kind": "solution",
             "tags": [
