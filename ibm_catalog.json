@@ -148,9 +148,9 @@
                                 "description": "Offers full control over architecture parameters, with well-chosen defaults that enable a functional Virtual Private Cloud (VPC) environment and integrated IBM Cloud services without requiring manual adjustments."
                             }
                         ],
-                        "diagrams": {
+                        "diagram": {
                             "caption": "Hub and Spoke Virtual Private Cloud(VPC) topology",
-                            "url": "https://raw.githubusercontent.com/IBM/deployable-architecture-iac-lab-materials/refs/heads/main/architecture.svg",
+                            "url": "https://raw.githubusercontent.com/IBM/deployable-architecture-iac-lab-materials/main/architecture.svg",
                             "type": "image/svg+xml"
                         }
                     },
