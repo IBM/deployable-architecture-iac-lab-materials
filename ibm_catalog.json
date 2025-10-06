@@ -201,7 +201,8 @@
                     ],
                     "install_type": "fullstack",
                     "scripts": [],
-                    "change_notices": {}
+                    "change_notices": {},
+                    "dependency_version_2": true
                 }
             ]
         }
